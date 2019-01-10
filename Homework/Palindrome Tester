@@ -4,7 +4,7 @@ public class Main
   public static void main (String[]args)
   {
     StringBuilder f = new StringBuilder();
-    String[]a ={"Palindrome",};
+    String[]a ={"Palindrome","Civic","Radar","Level","Eva, can I stab bats in a cave?","A man, a plan, a canal, Panama","Mr. Owl ate my metal worm","Never odd or even","Doc, Note: I Dissent. A fast never prevents a fatness. I diet on cod."};
     String[]b = new String[a.length];
     ArrayList<Character> c = new ArrayList<Character>(); 
     String d;
