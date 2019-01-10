@@ -3,27 +3,30 @@ public class Main
 {
   public static void main (String[]args)
   {
-    String[]a ={"Palindrome", "Civic", "Radar", "Level"};
+    StringBuilder f = new StringBuilder();
+    String[]a ={"Palindrome",};
     String[]b = new String[a.length];
     ArrayList<Character> c = new ArrayList<Character>(); 
     String d;
     ArrayList<String> e = new ArrayList<String>(); 
     for (int i = 0; i < a.length; i++){
 	    b[i] = a[i].toLowerCase();
+	    c.clear();
 	    for (int j = 0; j < b[i].length(); j++){
-	        c.clear();
 	        if(b[i].charAt(j) != '.' && b[i].charAt(j) != ' ' && b[i].charAt(j) != ',' && b[i].charAt(j) != ':'){
 	            c.add(b[i].charAt(j));
 	        }
 	    }
 	    d = "";
-	    for(int j = c.size(); j >= 0 ; j--){
-	        d += c.get(j);
+	    for(int j = c.size()-1; j >= 0 ; j--){
+	        f.append(c.get(j));
 	    }
+	    d = f.toString();
 	    e.add(d);
     }
     for (int i = 0; i < e.size(); i++){
-        System.out.println(e.get(i));
+        if (e.get(i).equals(a[i]))
+            System.out.println(a[i]+" is a palindrome.");
     }
   }
 }
