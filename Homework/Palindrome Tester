@@ -1,19 +1,29 @@
+import java.util.ArrayList;
 public class Main
 {
   public static void main (String[]args)
   {
-    String[]a = {"Palindrome", "Civic", "Radar", "Level"};
+    String[]a ={"Palindrome", "Civic", "Radar", "Level"};
     String[]b = new String[a.length];
-    char[]c = new char
+    ArrayList<Character> c = new ArrayList<Character>(); 
+    String d;
+    ArrayList<String> e = new ArrayList<String>(); 
     for (int i = 0; i < a.length; i++){
-        if (a[i].length() % 2 == 0){
-	        b[i] = a[i].toLowerCase();
-	        System.out.println(b[i]);
-	        for (int j = 0; j < b[i].length(); j++){
-	            
+	    b[i] = a[i].toLowerCase();
+	    for (int j = 0; j < b[i].length(); j++){
+	        c.clear();
+	        if(b[i].charAt(j) != '.' && b[i].charAt(j) != ' ' && b[i].charAt(j) != ',' && b[i].charAt(j) != ':'){
+	            c.add(b[i].charAt(j));
 	        }
-        }
-      }
+	    }
+	    d = "";
+	    for(int j = c.size(); j >= 0 ; j--){
+	        d += c.get(j);
+	    }
+	    e.add(d);
+    }
+    for (int i = 0; i < e.size(); i++){
+        System.out.println(e.get(i));
+    }
   }
-
 }
