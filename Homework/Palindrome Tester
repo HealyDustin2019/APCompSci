@@ -3,31 +3,32 @@ public class Main
 {
   public static void main (String[]args)
   {
-    StringBuilder f = new StringBuilder();
     String[]a ={"Palindrome","Civic","Radar","Level","Eva, can I stab bats in a cave?","A man, a plan, a canal, Panama","Mr. Owl ate my metal worm","Never odd or even","Doc, Note: I Dissent. A fast never prevents a fatness. I diet on cod."};
     String[]b = new String[a.length];
     ArrayList<Character> c = new ArrayList<Character>(); 
-    String d ="";
+    ArrayList<String> d = new ArrayList<String>();
     ArrayList<String> e = new ArrayList<String>(); 
+    StringBuilder f = new StringBuilder();
     for (int i = 0; i < a.length; i++){
 	    b[i] = a[i].toLowerCase();
 	    c.clear();
-	    for (int j = 0; j < b[i].length(); j++){
-	        if(b[i].charAt(j) != '.' && b[i].charAt(j) != ' ' && b[i].charAt(j) != ',' && b[i].charAt(j) != ':'){
+	    for (int j = 0; j < b[i].length(); j++)
+	        if(b[i].charAt(j) != '.' && b[i].charAt(j) != ' ' && b[i].charAt(j) != ',' && b[i].charAt(j) != ':' && b[i].charAt(j) != '?')
 	            c.add(b[i].charAt(j));
-	        }
-	    }
-	    for(int j = c.size()-1; j >= 0 ; j--){
+	    f.setLength(0);
+	    for (int j = 0; j < c.size(); j++)
 	        f.append(c.get(j));
-	    }
-	    d = f.toString();
-	    
-	    System.out.println(d);
-	    
+	    d.add(f.toString());
+	    f.setLength(0);
+	    for(int j = c.size()-1; j >= 0 ; j--)
+	        f.append(c.get(j));
+	    e.add(f.toString());
     }
     for (int i = 0; i < e.size(); i++){
-        if (e.get(i).equals(a[i]))
+        if (e.get(i).equals(d.get(i)))
             System.out.println(a[i]+" is a palindrome.");
+        else 
+            System.out.println(a[i]+" is not a palindrome.");
     }
   }
 }
