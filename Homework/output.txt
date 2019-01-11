@@ -1,0 +1,11 @@
+[31mPalindrome is not a palindrome.[0m
+[32mCivic is a palindrome.[0m
+[32mRadar is a palindrome.[0m
+[32mLevel is a palindrome.[0m
+[32mEva, can I stab bats in a cave? is a palindrome.[0m
+[32mA man, a plan, a canal, Panama is a palindrome.[0m
+[32mMr. Owl ate my metal worm is a palindrome.[0m
+[32mNever odd or even is a palindrome.[0m
+[32mDoc, Note: I Dissent. A fast never prevents a fatness. I diet on cod. is a palindrome.[0m
+
+
