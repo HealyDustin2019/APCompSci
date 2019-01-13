@@ -3,11 +3,11 @@ public class Main
 {
   public static void main (String[]args)
   {
-    String[]input = {"Palindrome","Civic","Radar","Level","Eva, can I stab bats in a cave?","A man, a plan, a canal, Panama","Mr. Owl ate my metal worm","Never odd or even","Doc, Note: I Dissent. A fast never prevents a fatness. I diet on cod."};
-    printResults(input[], check(input[]));
+    String[] input = {"Palindrome","Civic","Radar","Level","Eva, can I stab bats in a cave?","A man, a plan, a canal, Panama","Mr. Owl ate my metal worm","Never odd or even","Doc, Note: I Dissent. A fast never prevents a fatness. I diet on cod."};
+    printResults(input, check(input));
   }
   public static void printResults(String[] input, boolean[] checkedValues){
-        for(int i = 0; i < input.length(); i++){
+        for(int i = 0; i < input.length; i++){
             if(checkedValues[i])
                 System.out.println("\u001B[32m"+input[i]+" is a palindrome.\u001B[0m");
             else
@@ -16,27 +16,27 @@ public class Main
   }
   public static boolean[] check(String[] input){
         String[]normalizedInput = normalize(input);
-        String[]reversedInput = reverse(normalizedInput[]);
-        boolean[]checkedValues = new boolean[input.length()];
-        for(int i = 0; i < input.length(); i++){
-            if(normalizedInput[i].equals(reversedInput[i])
+        String[]reversedInput = reverse(normalizedInput);
+        boolean[]checkedValues = new boolean[input.length];
+        for(int i = 0; i < input.length; i++){
+            if(normalizedInput[i].equals(reversedInput[i]))
                 checkedValues[i] = true;
             else
                 checkedValues[i] = false;
         }
-        return checkedValues[];
+        return checkedValues;
   }
   public static String[] normalize(String[] input){
-        String[]normalizedInput = new String[input.length()];
-        for(int i = 0; i < input.length(); i++)
+        String[]normalizedInput = new String[input.length];
+        for(int i = 0; i < input.length; i++)
 	        normalizedInput[i] = input[i].toLowerCase().replaceAll("[^a-z]", "");
         return normalizedInput;
   }
-  public static String[] reverse(normalizedInput[]){
+  public static String[] reverse(String[]normalizedInput){
         ArrayList<Character> deconstructedElement = new ArrayList<Character>();
         StringBuilder reversedElement = new StringBuilder();
-        String[]reversedInput = new String[normalizedInput.length()];
-        for(int i = 0; i < normalizedInput.length(); i++){
+        String[]reversedInput = new String[normalizedInput.length];
+        for(int i = 0; i < normalizedInput.length; i++){
             deconstructedElement.clear();
             reversedElement.setLength(0);
             deconstructedElement = deconstruct(normalizedInput[i]);
