@@ -7,31 +7,26 @@ public class Main
     String[]b = new String[a.length];
     ArrayList<Character> c = new ArrayList<Character>(); 
     ArrayList<String> d = new ArrayList<String>();
-    ArrayList<String> e = new ArrayList<String>(); 
-    StringBuilder f = new StringBuilder();
+    StringBuilder e = new StringBuilder();
     for (int i = 0; i < a.length; i++){
 	    b[i] = a[i].toLowerCase().replaceAll("[^a-z]", "");
 	    c.clear();
 	    for (int j = 0; j < b[i].length(); j++)
 	        c.add(b[i].charAt(j));
-	    f.setLength(0);
-	    for (int j = 0; j < c.size(); j++)
-	        f.append(c.get(j));
-	    d.add(f.toString());
-	    f.setLength(0);
+	    e.setLength(0);
 	    for(int j = c.size()-1; j >= 0 ; j--)
-	        f.append(c.get(j));
-	    e.add(f.toString());
+	        e.append(c.get(j));
+	    d.add(e.toString());
     }
-    for (int i = 0; i < e.size(); i++){
-        if(g(d.get(i),e.get(i)))
+    for(int i = 0; i < d.size(); i++){
+        if(g(b[i],d.get(i)))
             System.out.println("\u001B[32m"+a[i]+" is a palindrome.\u001B[0m");
         else
             System.out.println("\u001B[31m"+a[i]+" is not a palindrome.\u001B[0m");
     }
   }
   public static boolean g(String h, String i){
-    if (h.equals(i))
+    if(h.equals(i))
         return true;
     return false;
   }
