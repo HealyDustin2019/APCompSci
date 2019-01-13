@@ -8,7 +8,7 @@ public class Main
     ArrayList<Character> c = new ArrayList<Character>(); 
     ArrayList<String> d = new ArrayList<String>();
     StringBuilder e = new StringBuilder();
-    for (int i = 0; i < a.length; i++){
+    for(int i = 0; i < a.length; i++){
 	    b[i] = a[i].toLowerCase().replaceAll("[^a-z]", "");
 	    c.clear();
 	    for (int j = 0; j < b[i].length(); j++)
@@ -19,15 +19,10 @@ public class Main
 	    d.add(e.toString());
     }
     for(int i = 0; i < d.size(); i++){
-        if(g(b[i],d.get(i)))
+        if(b[i].equals(d.get(i)))
             System.out.println("\u001B[32m"+a[i]+" is a palindrome.\u001B[0m");
         else
             System.out.println("\u001B[31m"+a[i]+" is not a palindrome.\u001B[0m");
     }
-  }
-  public static boolean g(String h, String i){
-    if(h.equals(i))
-        return true;
-    return false;
   }
 }
