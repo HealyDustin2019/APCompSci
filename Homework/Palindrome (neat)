@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+public class Main
+{
+  public static void main (String[]args)
+  {
+    String[]input = {"Palindrome","Civic","Radar","Level","Eva, can I stab bats in a cave?","A man, a plan, a canal, Panama","Mr. Owl ate my metal worm","Never odd or even","Doc, Note: I Dissent. A fast never prevents a fatness. I diet on cod."};
+    printResults(input[], check(input[]));
+  }
+  public static void printResults(String[] input, boolean[] checkedValues){
+        for(int i = 0; i < input.length(); i++){
+            if(checkedValues[i])
+                System.out.println("\u001B[32m"+input[i]+" is a palindrome.\u001B[0m");
+            else
+                System.out.println("\u001B[31m"+input[i]+" is not a palindrome.\u001B[0m");
+        }
+  }
+  public static boolean[] check(String[] input){
+        String[]normalizedInput = normalize(input);
+        String[]reversedInput = reverse(normalizedInput[]);
+        boolean[]checkedValues = new boolean[input.length()];
+        for(int i = 0; i < input.length(); i++){
+            if(normalizedInput[i].equals(reversedInput[i])
+                checkedValues[i] = true;
+            else
+                checkedValues[i] = false;
+        }
+        return checkedValues[];
+  }
+  public static String[] normalize(String[] input){
+        String[]normalizedInput = new String[input.length()];
+        for(int i = 0; i < input.length(); i++)
+	        normalizedInput[i] = input[i].toLowerCase().replaceAll("[^a-z]", "");
+        return normalizedInput;
+  }
+  public static String[] reverse(normalizedInput[]){
+        ArrayList<Character> deconstructedElement = new ArrayList<Character>();
+        StringBuilder reversedElement = new StringBuilder();
+        String[]reversedInput = new String[normalizedInput.length()];
+        for(int i = 0; i < normalizedInput.length(); i++){
+            deconstructedElement.clear();
+            reversedElement.setLength(0);
+            deconstructedElement = deconstruct(normalizedInput[i]);
+	        for(int j = deconstructedElement.size()-1; j >= 0 ; j--)
+	            reversedElement.append(deconstructedElement.get(j));
+	        reversedInput[i] = reversedElement.toString();
+        }
+        return reversedInput;
+  }
+  public static ArrayList<Character> deconstruct(String normalizedInput){
+        ArrayList<Character> deconstructedElement = new ArrayList<Character>();
+	    for(int i = 0; i < normalizedInput.length(); i++)
+	        deconstructedElement.add(normalizedInput.charAt(i));
+	    return deconstructedElement;
+  }
+}
