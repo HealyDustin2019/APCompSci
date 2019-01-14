@@ -1,0 +1,10 @@
+public class Main{
+  public static void main (String[]args){
+    String[]a ={"Palindrome","Civic","Radar","Level","Eva, can I stab bats in a cave?","A man, a plan, a canal, Panama","Mr. Owl ate my metal worm","Never odd or even","Doc, Note: I Dissent. A fast never prevents a fatness. I diet on cod."};
+    String b;
+    for(int i = 0; i < a.length; i++){
+        b = a[i].toLowerCase().replaceAll("[^a-z]", "");
+        StringBuilder c = new StringBuilder();
+        for(int j = b.length()-1; j >= 0 ; j--)
+	        c.append(b.charAt(j));
+	    System.out.printf(a[i] + "%s\n", b.equals(c.toString()) ? " is a palindrome." : " is not a palindrome.");}}}
