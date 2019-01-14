@@ -1,0 +1,25 @@
+public class Main
+{
+  public static void main (String[]args)
+  {
+    String[]listOfInputs = {"Palindrome","Civic","Radar","Level","Eva, can I stab bats in a cave?","A man, a plan, a canal, Panama","Mr. Owl ate my metal worm","Never odd or even","Doc, Note: I Dissent. A fast never prevents a fatness. I diet on cod."};
+    // ^ An array of strings, used as the source of inputs to be tested for palindromes. Referenced as listOfInputs[(*index here*)]. Index 0 produces "Palindrome", Index 8 produces "Doc, Note: I Dissent. A fast never prevents a fatness. I diet on cod."
+    String inputBeingTested;
+    // ^ This variable is used to hold the current index of the array at any time. It is declared outside the for loop to avoid errors.
+    for(int i = 0; i < listOfInputs.length; i++)
+    // ^ The for loop begins at 0 and ends at the last index of listOfInputs. Each time it tests an index, it increases its number value and restarts.
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        // ^ This is an instantiation of the class StringBuilder. It is the way Java handles turning characters into strings. It will hold all the characters you give it with the .append command in order until you make them a string with .toString.
+        inputBeingTested = listOfInputs[i].toLowerCase().replaceAll("[^a-z]", "");
+        // ^ inputBeingTested becomes the current index of listOfInputs, and is then made to be completely lower case. Any characters that are not lowercase a-z are removed with replaceAll.
+        for(int j = inputBeingTested.length()-1; j >= 0 ; j--)
+        // ^ This for loop goes through each character of the string inputBeingTested, starting from its last index and finishing at its first. This is how the word is reversed.
+	        stringBuilder.append(inputBeingTested.charAt(j));
+	        // ^ The stringBuilder holds the characters of the word in reverse order now
+	    System.out.printf(listOfInputs[i] + "%s\n", inputBeingTested.equals(stringBuilder.toString()) ? " is a palindrome." : " is not a palindrome.");
+	    // ^ Now, the original input is printed and depending on whether or not the word is a palindrome, the answer will be printed with a ternary operator.
+    }
+    // ^ i adds 1 to itself and restarts with the next word in listOfInputs.
+  }
+}
