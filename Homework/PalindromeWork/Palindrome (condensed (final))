@@ -4,4 +4,4 @@ public class Main{
         StringBuilder b = new StringBuilder();
         for(int i = a.length()-1; i >= 0 ; i--)
 	        b.append(a.charAt(i));
-        System.out.printf(args[0] + "%s\n", a.equals(b.toString()) ? " is a palindrome." : " is not a palindrome.");}}}
+        System.out.printf(args[0] + "%s\n", a.equals(b.toString()) ? " is a palindrome." : " is not a palindrome.");}}
