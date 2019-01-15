@@ -1,5 +1,5 @@
 public class Main{
     public static void main(String[] args){
-        System.out.printf(args[0] + "%s\n", args[0].toLowerCase().replaceAll("[^a-z]", "").equals(new StringBuilder(args[0].toLowerCase().replaceAll("[^a-z]", "")).reverse().toString()) ? " is a palindrome." : " is not a palindrome.");
+        System.out.printf("%s\n", args[0].toLowerCase().replaceAll("[^a-z]", "").equals(new StringBuilder(args[0].toLowerCase().replaceAll("[^a-z]", "")).reverse().toString()) ? "\u001B[32m" + args[0] + " is a palindrome.\u001B[0m" : "\u001B[31m" + args[0] + " is not a palindrome.\u001B[0m");
     }
 }
