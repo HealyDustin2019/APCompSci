@@ -1,0 +1,48 @@
+public class Main
+{
+	public static void main(String[] args) {
+		String a = "236392,1,4,4,4;418945,3,4,4,4;408892,2,4,2,4;";
+		String[] b = sort(a);
+		b = clean(b);
+		
+	}
+	public static String[] sort(String a){
+	    String[] b = new String[a.length()];
+		int c = 0;
+		int d = 0;
+		for(int i = 0; i < a.length(); i++){
+		    if(a.charAt(i) == ';'){
+		        b[d] = a.substring(c, i);
+		        c = i+1;
+		        d++;
+		    }
+	    }
+	    return b;
+	}
+	public static String[] clean(String[] b){
+	    int c = 0;
+	    for(int i = 0; i < b[0].length(); i++){
+	        if(b[0].charAt(i) == ','){
+	            c = i;
+	            break;
+	        }
+	    }
+	    int e = 0;
+	    for(int i = 0; i < b.length; i++){
+	        if(b[i] != null)
+	            e++;
+	    }
+	    String f[] = new String[e];
+	    for(int i = 0; i < b.length; i++){
+	        if(b[i] != null)
+	            f[i] = b[i];
+	    }
+	    System.out.println(f.length);
+	    String[] d = new String[f.length];
+	    for(int i = 0; i < f.length; i++){
+	        d[i] = f[i].substring(0,c);
+		    System.out.println(d[i]);
+	    }
+	    return d;
+	}
+}
