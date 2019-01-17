@@ -45,8 +45,8 @@ public class Main{
 	}
 	public static int[] tally(int[][] a, int c){
 	    int[] b = new int[4];
-	    for(int i = 0; i < a.length; i++){
-		    for(int j = 0; j < 5; j++){
+	    for(int i = 0; i < a.length; i++)
+		    for(int j = 0; j < 5; j++)
 		        if(j == c){
 		            if(a[i][j] == 1)
 		                b[0]++;
@@ -57,8 +57,6 @@ public class Main{
 		            if(a[i][j] == 4)
 		                b[3]++;
 		        }
-		    }
-	    }
 	    return b;
 	}
 	public static void result(int a[], int b, String[] c){
