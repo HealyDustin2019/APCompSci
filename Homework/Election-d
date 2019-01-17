@@ -17,20 +17,16 @@ public class Main{
 		    if(a.charAt(i) == ';')
 		        b++;
 		int c[][] = new int[b][5];
-		int id = 0; 
-		int vote = 0;
-		int last = 0;
+		int d[] = {0,0,0};
 		for(int i = 0; i < a.length(); i++){
-		    if(a.charAt(i) == ','){
-		        c[id][vote] = Integer.parseInt(a.substring(last, i));
-		        vote++;
-		        last = i + 1;
-		    }
-		    if(a.charAt(i) == ';'){
-		        c[id][vote] = Integer.parseInt(a.substring(last, i));
-		        id++;
-		        vote = 0;
-		        last = i + 1;
+		    if(a.charAt(i) == ','  || a.charAt(i) == ';'){
+		        c[d[0]][d[1]] = Integer.parseInt(a.substring(d[2], i));
+		        d[1]++;
+		        if(a.charAt(i) == ';'){
+		            d[0]++;
+		            d[1] = 0;
+		        }
+		        d[2] = i + 1;
 		    }
 		}
 		return c;
@@ -43,21 +39,13 @@ public class Main{
 		                a[i][k] = 0;
 		return a;
 	}
-	public static int[] tally(int[][] a, int c){
-	    int[] b = new int[4];
+	public static int[] tally(int[][] a, int b){
+	    int[] c = new int[4];
 	    for(int i = 0; i < a.length; i++)
-		    for(int j = 0; j < 5; j++)
-		        if(j == c){
-		            if(a[i][j] == 1)
-		                b[0]++;
-		            if(a[i][j] == 2)
-		                b[1]++;
-		            if(a[i][j] == 3)
-		                b[2]++;
-		            if(a[i][j] == 4)
-		                b[3]++;
-		        }
-	    return b;
+		    for(int k = 1; k < 5; k++)
+		        if(a[i][b] == k)
+		            c[(k-1)]++;
+	    return c;
 	}
 	public static void result(int a[], int b, String[] c){
 	    for(int i = 0; i < a.length; i++)
