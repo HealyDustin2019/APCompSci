@@ -1,0 +1,28 @@
+public class Main{
+	public static void main(String[] args) {
+		String a = "236392,1,4,4,4;418945,3,4,4,4;408892,2,4,2,4;408892,2,4,2,4;";
+		int b = 0;
+		for(int i = 0; i < a.length(); i++)
+		    if(a.charAt(i) == ';')
+		        b++;
+		Object c[][] = new Object[b][5];
+		int id = 0; 
+		int vote = 0;
+		int last = 0;
+		for(int i = 0; i < a.length(); i++){
+		    if(a.charAt(i) == ','){
+		        c[id][vote] = a.substring(last, i);
+		        vote++;
+		        last = i + 1;
+		    }
+		    if(a.charAt(i) == ';'){
+		        c[id][vote] = a.substring(last, i);
+		        id++;
+		        vote = 0;
+		        last = i + 1;
+		    }
+		}
+		for(int i = 0; i < 4; i++)
+		    System.out.println(c[i][4]);
+	}
+}
