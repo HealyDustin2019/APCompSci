@@ -1,0 +1,54 @@
+public class Main
+{
+  public static void main (String[]args)
+  {
+    int[] arr = {0,1,63,127,255,256};
+    for(int i = 0; i < 6; i++){
+     System.out.printf("%d: (Binary) %s (Octal) %09d (Hex) %s\n",arr[i],bin(arr[i]),oct(arr[i]),hex(arr[i]));  
+    }
+  }
+  public static String bin(int input){
+    int base = 2;
+    int[] con = new int[9];
+    for (int i = 0; i < 9; i++)
+      {
+	if (input % base == 0)
+	  con[i] = 0;
+	else
+	  con[i] = 1;
+	input /= base;
+      }
+      StringBuilder a = new StringBuilder();
+    for (int i = 8; i > -1; i--)
+      a.append(con[i]);
+    return a.toString();
+  }
+  public static int oct (int octal)
+  {
+    int count = 0;
+    int done = 0;
+    while (octal != 0)
+      {
+	int work = (int) ((octal % 8) * Math.pow (10, count));
+	count++;
+	done += work;
+	octal /= 8;
+      }
+    return done;
+  }
+  public static String hex(int inp){
+     int rem;
+     String ugh=""; 
+     char hex[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+     while(inp >  0)
+     {
+       rem = inp % 16; 
+       ugh = hex[rem] + ugh; 
+       inp /= 16;
+     }
+     ugh = String.format("%0"+(9 - ugh.length())+"d%s",0,ugh); 
+     return ugh;
+  
+  }
+
+}
